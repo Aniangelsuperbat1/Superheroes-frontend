@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import alanBtn from "@alan-ai/alan-sdk-web";
 import firebase from "./firebase";
-import Layout from "./components/Newslayout/Layout"
+import Herolayout from "./components/Herolayout/Herolayout"
 
 const alanKey = process.env.REACT_APP_ALAN_KEY;
 
@@ -21,7 +21,11 @@ const App = () => {
     });
   }, []);
 
-  return <h1>test</h1>;
+  return (
+    <div>
+      <Herolayout heroes={superheroes}/>
+    </div>
+  );
 
   // useEffect(() => {
   //   const data = async () => {
