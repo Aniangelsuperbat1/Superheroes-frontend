@@ -6,10 +6,10 @@ const heroCards = [
   { color: "#00838f", title: "Superheroes", text: "Give me all the heroes" },
   {
     color: "#1565c0",
-    title: "News by Categories",
+    title: "Superhero By Term",
     info:
-      "Business, Entertainment, General, Health, Science, Sports, Technology",
-    text: "Give me the latest Technology news",
+      "DC, Marvel",
+    text: "Give me all the heroes from DC",
   },
 ];
 
