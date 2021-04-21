@@ -18,12 +18,6 @@ const App = () => {
           setSuperheroes(heroes);
         }
       },
-      // onCommand: ({command, articles}) => {
-      //   if (command === "news") {
-      //     console.log(articles)
-      //     setArticles(articles)
-      //   }
-      // }
     });
   }, []);
 
