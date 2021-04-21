@@ -6,24 +6,24 @@ import Layout from "./components/Newslayout/Layout"
 const alanKey = process.env.REACT_APP_ALAN_KEY;
 
 const App = () => {
-  // const [superheroes, setSuperheroes] = useState([]);
-  const [articles, setArticles] = useState([]);
+  const [superheroes, setSuperheroes] = useState([]);
+  // const [articles, setArticles] = useState([]);
 
   useEffect(() => {
     alanBtn({
       key: alanKey,
-      // onCommand: ({ command, heroes }) => {
-      //   if (command === "super") {
-      //     console.log(heroes);
-      //     setSuperheroes(heroes);
-      //   }
-      // },
-      onCommand: ({command, articles}) => {
-        if (command === "news") {
-          console.log(articles)
-          setArticles(articles)
+      onCommand: ({ command, heroes }) => {
+        if (command === "super") {
+          console.log(heroes);
+          setSuperheroes(heroes);
         }
-      }
+      },
+      // onCommand: ({command, articles}) => {
+      //   if (command === "news") {
+      //     console.log(articles)
+      //     setArticles(articles)
+      //   }
+      // }
     });
   }, []);
 
