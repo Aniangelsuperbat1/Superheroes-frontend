@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import alanBtn from "@alan-ai/alan-sdk-web";
 import firebase from "./firebase";
+import Layout from "./components/Newslayout/Layout"
 
 const alanKey = process.env.REACT_APP_ALAN_KEY;
 
