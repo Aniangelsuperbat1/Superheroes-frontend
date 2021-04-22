@@ -1,22 +1,33 @@
-import React from 'react';
+import React from "react";
 import { Grid, Grow, Typography } from "@material-ui/core";
+import SingleHero from "../SingleHero/SingleHero";
 import useStyles from "./styles.js";
 
 const heroCards = [
   { color: "#00838f", title: "Superheroes", text: "Give me all the heroes" },
   {
-    color: "#1565c0",
+    color: "#1234c0",
+    title: "Villians",
+    text: "Give me all the villians",
+  },
+  {
+    color: "#2579c0",
     title: "Superhero By Term",
-    info:
-      "DC, Marvel",
+    info: "DC, Marvel",
     text: "Give me all the heroes from DC",
+  },
+  {
+    color: "#9175c0",
+    title: "Villian By Term",
+    info: "DC, Marvel",
+    text: "Give me all the Villians from Marvel",
   },
 ];
 
-const Herolayout = ({heroes}) => {
-  const classes = useStyles()
-    
-      if (!heroes.length) {
+const Herolayout = ({ heroes }) => {
+  const classes = useStyles();
+
+  if (!heroes.length) {
     return (
       <Grow in>
         <Grid
@@ -57,10 +68,9 @@ const Herolayout = ({heroes}) => {
       </Grow>
     );
   }
-    
-    
-    return (
-        <Grow in>
+
+  return (
+    <Grow in>
       <Grid
         className={classes.container}
         container
@@ -69,7 +79,7 @@ const Herolayout = ({heroes}) => {
       >
         {heroes.map((hero, i) => (
           <Grid item xs={12} sm={6} md={4} lg={3} style={{ display: "flex" }}>
-            {/* <SingleHero i={i} article={article} /> */}
+            <SingleHero i={i} hero={hero} />
           </Grid>
         ))}
       </Grid>
