@@ -2,26 +2,29 @@ import React, { useEffect, useState } from "react";
 import alanBtn from "@alan-ai/alan-sdk-web";
 import firebase from "./firebase";
 import Herolayout from "./components/Herolayout/Herolayout";
-// import wordsToNumbers from "words-to-numbers";
+import useStyles from "./styles"
 
 const alanKey = process.env.REACT_APP_ALAN_KEY;
 
 const App = () => {
   const [superheroes, setSuperheroes] = useState([]);
+  // const [activeHero, setActiveHero] = useState(-1)
 
   useEffect(() => {
     alanBtn({
       key: alanKey,
       onCommand: ({ command, heroes, number }) => {
         if (command === "super") {
-          console.log(heroes);
           setSuperheroes(heroes);
+          // setActiveHero(-1)
         } else if (command === "open") {
-          let newNum = parseInt(number);
-          console.log(typeof newNum);
-          // console.log(typeof (number))
-          console.log(heroes);
-          window.open(heroes[newNum-1].wiki, "_blank");
+          let newNum = parseInt(number, 10);
+          if(newNum > heroes.length) {
+            alanBtn().playText(`no hero number ${newNum}`);
+          } else{
+            alanBtn().playText(`Opening hero number ${newNum}`);
+            window.open(heroes[newNum-1].wiki, "_blank");
+          } 
         }
       },
     });

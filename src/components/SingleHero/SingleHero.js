@@ -33,7 +33,7 @@ const SingleHero = ({
           // variant="body2"
           // color="textSecondary"
           >
-            Home Town:{Home}
+            Home Town: {Home}
           </Typography>
         </CardContent>
         <CardContent>
