@@ -4,6 +4,7 @@ import firebase from "./firebase";
 import Herolayout from "./components/Herolayout/Herolayout";
 import useStyles from "./styles"
 import { Typography } from "@material-ui/core";
+import wordsToNumbers from "words-to-numbers";
 
 const alanKey = process.env.REACT_APP_ALAN_KEY;
 
@@ -11,6 +12,7 @@ const App = () => {
   const [superheroes, setSuperheroes] = useState([]);
   const [activeHero, setActiveHero] = useState(-1)
   const classes = useStyles();
+  
 
   useEffect(() => {
     alanBtn({
@@ -20,21 +22,32 @@ const App = () => {
           setSuperheroes(heroes);
           setActiveHero(-1);
         } else if (command === "open") {
-          let newNum = parseInt(number);
-          if (newNum > heroes.length) {
-            alanBtn().playText(`no hero number ${newNum} please sekect again`);
+          const parsedNumber =
+            number.length > 2
+              ? wordsToNumbers(number, { fuzzy: true })
+              : number;
+          const hero = heroes[parsedNumber - 1];
+          if (parsedNumber > heroes.length) {
+            alanBtn().playText("Please try that again...");
+          } else if (hero) {
+            window.open(hero.wiki, "_blank");
+            alanBtn().playText(`opening hero number ${parsedNumber}`);
           } else {
-            alanBtn().playText(`Opening hero number ${newNum}`);
-            window.open(heroes[newNum - 1].wiki, "_blank");
+            alanBtn().playText("Please try that again...");
           }
-        } else if (command === 'close') {
-          let newNum = parseInt(number);
-          console.log(typeof newNum)
-          if (newNum > heroes.length) {
-            alanBtn().playText(`no villain number ${newNum} please select again`);
+        } else if (command === "close") {
+          const parsedNumber =
+            number.length > 2
+              ? wordsToNumbers(number, { fuzzy: true })
+              : number;
+          const hero = heroes[parsedNumber - 1];
+          if (parsedNumber > heroes.length) {
+            alanBtn().playText("Please try that again...");
+          } else if (hero) {
+            window.open(hero.wiki, "_blank");
+            alanBtn().playText(`opening villain number ${parsedNumber}`);
           } else {
-            alanBtn().playText(`Opening villain number ${newNum}`);
-            window.open(heroes[newNum - 1].wiki, "_blank");
+            alanBtn().playText("Please try that again...");
           }
         } 
       },
