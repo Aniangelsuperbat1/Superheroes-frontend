@@ -32,7 +32,7 @@ const Herolayout = ({ heroes }) => {
       <>
         <div className={classes.logoContainer}>
           <img
-            src="https://nofilmschool.com/sites/default/files/styles/facebook/public/mv5bndc4ymfimjctm2myyy00ytfiltg0zmetnjgwzdyzzguwmtu1xkeyxkfqcgdeqwpnyw1i._v1_.jpg?itok=OxMUdce5"
+            src="https://sm.mashable.com/t/mashable_in/photo/default/8-years-of-the-avengers-how-joss-whedons-risk-became-crucial_38p5.h960.jpg"
             className={classes.Logo}
             alt="logo"
           />
@@ -73,7 +73,7 @@ const Herolayout = ({ heroes }) => {
             </Grid>
           ))}
         </Grid>
-        </>
+      </>
     );
   }
 
