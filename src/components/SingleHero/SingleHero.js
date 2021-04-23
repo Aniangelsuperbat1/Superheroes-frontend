@@ -12,7 +12,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import useStyles from "./styles.js";
 
 const SingleHero = ({
-  hero: { name, alterEgo, Home, wiki, photo, Powers },
+  hero: { name, alterEgo, Home, wiki, photo, Powers, archNemesis },
   i,
 }) => {
   const classes = useStyles();

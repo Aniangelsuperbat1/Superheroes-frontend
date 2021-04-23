@@ -18,16 +18,25 @@ const App = () => {
       onCommand: ({ command, heroes, number }) => {
         if (command === "super") {
           setSuperheroes(heroes);
-          setActiveHero(-1)
+          setActiveHero(-1);
         } else if (command === "open") {
-          let newNum = parseInt(number, 10);
-          if(newNum > heroes.length) {
+          let newNum = parseInt(number);
+          if (newNum > heroes.length) {
             alanBtn().playText(`no hero number ${newNum} please sekect again`);
-          } else{
+          } else {
             alanBtn().playText(`Opening hero number ${newNum}`);
-            window.open(heroes[newNum-1].wiki, "_blank");
-          } 
-        }
+            window.open(heroes[newNum - 1].wiki, "_blank");
+          }
+        } else if (command === 'close') {
+          let newNum = parseInt(number);
+          console.log(typeof newNum)
+          if (newNum > heroes.length) {
+            alanBtn().playText(`no villain number ${newNum} please select again`);
+          } else {
+            alanBtn().playText(`Opening villain number ${newNum}`);
+            window.open(heroes[newNum - 1].wiki, "_blank");
+          }
+        } 
       },
     });
   }, []);

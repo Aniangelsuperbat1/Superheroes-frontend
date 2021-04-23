@@ -7,8 +7,8 @@ const heroCards = [
   { color: "#00838f", title: "Superheroes", text: "Give me all the heroes" },
   {
     color: "#1234c0",
-    title: "Villians",
-    text: "Give me all the villians",
+    title: "Villains",
+    text: "Give me all the villains",
   },
   {
     color: "#2579c0",
@@ -18,9 +18,9 @@ const heroCards = [
   },
   {
     color: "#9175c0",
-    title: "Villian By Term",
+    title: "Villain By Term",
     info: "DC, Marvel",
-    text: "Give me all the Villians from Marvel",
+    text: "Give me all the Villains from Marvel",
   },
 ];
 
