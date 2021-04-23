@@ -21,7 +21,7 @@ const App = () => {
           console.log(typeof newNum);
           // console.log(typeof (number))
           console.log(heroes);
-          window.open(heroes[newNum].wiki, "_blank");
+          window.open(heroes[newNum-1].wiki, "_blank");
         }
       },
     });
