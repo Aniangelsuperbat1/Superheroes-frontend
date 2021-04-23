@@ -3,12 +3,14 @@ import alanBtn from "@alan-ai/alan-sdk-web";
 import firebase from "./firebase";
 import Herolayout from "./components/Herolayout/Herolayout";
 import useStyles from "./styles"
+import { Typography } from "@material-ui/core";
 
 const alanKey = process.env.REACT_APP_ALAN_KEY;
 
 const App = () => {
   const [superheroes, setSuperheroes] = useState([]);
-  // const [activeHero, setActiveHero] = useState(-1)
+  const [activeHero, setActiveHero] = useState(-1)
+  const classes = useStyles();
 
   useEffect(() => {
     alanBtn({
@@ -16,11 +18,11 @@ const App = () => {
       onCommand: ({ command, heroes, number }) => {
         if (command === "super") {
           setSuperheroes(heroes);
-          // setActiveHero(-1)
+          setActiveHero(-1)
         } else if (command === "open") {
           let newNum = parseInt(number, 10);
           if(newNum > heroes.length) {
-            alanBtn().playText(`no hero number ${newNum}`);
+            alanBtn().playText(`no hero number ${newNum} please sekect again`);
           } else{
             alanBtn().playText(`Opening hero number ${newNum}`);
             window.open(heroes[newNum-1].wiki, "_blank");
@@ -32,6 +34,31 @@ const App = () => {
 
   return (
     <div>
+      <div className={classes.logoContainer}>
+        {superheroes.length ? (
+          <div className={classes.infoContainer}>
+            <div className={classes.card}>
+              <Typography variant="h5" component="h2">
+                Try saying: <br />
+                <br />
+                Open hero number [5]
+              </Typography>
+            </div>
+            <div className={classes.card}>
+              <Typography variant="h5" component="h2">
+                Try saying: <br />
+                <br />
+                Go back
+              </Typography>
+            </div>
+          </div>
+        ) : null}
+        <img
+          src="https://nofilmschool.com/sites/default/files/styles/facebook/public/mv5bndc4ymfimjctm2myyy00ytfiltg0zmetnjgwzdyzzguwmtu1xkeyxkfqcgdeqwpnyw1i._v1_.jpg?itok=OxMUdce5"
+          className={classes.alanLogo}
+          alt="logo"
+        />
+      </div>
       <Herolayout heroes={superheroes} />
     </div>
   );
