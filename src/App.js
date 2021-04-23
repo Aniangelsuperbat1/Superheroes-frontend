@@ -53,11 +53,6 @@ const App = () => {
             </div>
           </div>
         ) : null}
-        <img
-          src="https://nofilmschool.com/sites/default/files/styles/facebook/public/mv5bndc4ymfimjctm2myyy00ytfiltg0zmetnjgwzdyzzguwmtu1xkeyxkfqcgdeqwpnyw1i._v1_.jpg?itok=OxMUdce5"
-          className={classes.alanLogo}
-          alt="logo"
-        />
       </div>
       <Herolayout heroes={superheroes} />
     </div>

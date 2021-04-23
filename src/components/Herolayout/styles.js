@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-export default makeStyles({
+export default makeStyles((theme) => ({
   card: {
     display: "flex",
     flexDirection: "column",
@@ -24,5 +24,31 @@ export default makeStyles({
     margin: 0,
     alignItems: "center",
   },
-});
+  Logo: {
+    display: "flex",
+    height: "40vh",
+    borderRadius: "15%",
+    padding: "0 5%",
+    margin: "3% 0",
+    alignItems: "center",
+    [theme.breakpoints.down("sm")]: {
+      height: "35vmin",
+    },
+  },
+  logoContainer: {
+    padding: "0 5%",
+    display: "flex",
+    justifyContent: "space-around",
+    alignItems: "center",
+    width: "100%",
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column-reverse",
+      textAlign: "center",
+    },
+  },
+  // logoPic: {
+  //   alignItems: "center",
+  //   justifyContent: "center",
+  // },
+}));
 

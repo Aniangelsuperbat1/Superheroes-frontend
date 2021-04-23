@@ -29,7 +29,14 @@ const Herolayout = ({ heroes }) => {
 
   if (!heroes.length) {
     return (
-      <Grow in>
+      <>
+        <div className={classes.logoContainer}>
+          <img
+            src="https://nofilmschool.com/sites/default/files/styles/facebook/public/mv5bndc4ymfimjctm2myyy00ytfiltg0zmetnjgwzdyzzguwmtu1xkeyxkfqcgdeqwpnyw1i._v1_.jpg?itok=OxMUdce5"
+            className={classes.Logo}
+            alt="logo"
+          />
+        </div>
         <Grid
           className={classes.container}
           container
@@ -62,10 +69,11 @@ const Herolayout = ({ heroes }) => {
                   Try saying: <br /> <i>{heroCard.text}</i>
                 </Typography>
               </div>
+              <div></div>
             </Grid>
           ))}
         </Grid>
-      </Grow>
+        </>
     );
   }
 
