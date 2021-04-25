@@ -8,7 +8,7 @@ const heroCards = [
   {
     color: "#1234c0",
     title: "Villains",
-    text: "Give me all the villains",
+    text: "Jarvis, Give me all the Villains",
   },
   {
     color: "#2579c0",
