@@ -12,7 +12,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import useStyles from "./styles.js";
 
 const SingleHero = ({
-  hero: { name, alterEgo, Home, wiki, photo, Powers, archNemesis },
+  hero: { name, alterEgo, Home, wiki, photo, Powers, archnemesis },
   i,
 }) => {
   const classes = useStyles();
@@ -36,7 +36,7 @@ const SingleHero = ({
             Home Town: {Home}
           </Typography>
           <Typography variant="body3" component="h2">
-            Arch Nemesis: {archNemesis}
+            Arch Nemesis: {archnemesis}
           </Typography>
         </CardContent>
         <CardContent>
