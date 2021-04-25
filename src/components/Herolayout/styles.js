@@ -46,9 +46,5 @@ export default makeStyles((theme) => ({
       textAlign: "center",
     },
   },
-  // logoPic: {
-  //   alignItems: "center",
-  //   justifyContent: "center",
-  // },
 }));
 

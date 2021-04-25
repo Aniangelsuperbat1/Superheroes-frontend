@@ -35,9 +35,9 @@ const SingleHero = ({
           >
             Home Town: {Home}
           </Typography>
-          <Typography variant="body3" component="h2">
+          {/* <Typography variant="body3" component="h2">
             Arch Nemesis: {archnemesis}
-          </Typography>
+          </Typography> */}
         </CardContent>
         <CardContent>
           Powers:
