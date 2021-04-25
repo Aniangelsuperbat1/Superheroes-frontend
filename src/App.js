@@ -33,7 +33,7 @@ const App = () => {
             window.open(hero.wiki, "_blank");
             alanBtn().playText(`opening hero number ${parsedNumber}`);
           } else {
-            alanBtn().playText("Please try that again...");
+            alanBtn().playText(`I'm sorry, hero number ${parsedNumber} does not exist`);
           }
         } else if (command === "close") {
           const parsedNumber =
@@ -47,7 +47,9 @@ const App = () => {
             window.open(hero.wiki, "_blank");
             alanBtn().playText(`opening villain number ${parsedNumber}`);
           } else {
-            alanBtn().playText("Please try that again...");
+            alanBtn().playText(
+              `I'm sorry, villain number ${parsedNumber} does not exist`
+            );
           }
         } 
       },
