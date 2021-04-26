@@ -16,6 +16,7 @@ const SingleHero = ({
   i,
 }) => {
   const classes = useStyles();
+  
   return (
     <Card className={classes.card}>
       <CardActionArea href={wiki} target="_blank">

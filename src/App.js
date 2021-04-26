@@ -65,14 +65,14 @@ const App = () => {
               <Typography variant="h5" component="h2">
                 Try saying: <br />
                 <br />
-                Jarvis, Open hero number [5]
+                Open hero number [5]
               </Typography>
             </div>
             <div className={classes.card}>
               <Typography variant="h5" component="h2">
                 Try saying: <br />
                 <br />
-                Go back
+                Jarvis, Go back
               </Typography>
             </div>
           </div>
