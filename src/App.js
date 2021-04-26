@@ -27,14 +27,12 @@ const App = () => {
               : number;
           const hero = heroes[parsedNumber - 1];
           if (parsedNumber > heroes.length) {
-            alanBtn().playText("Please try that again...");
-          } else if (hero) {
-            window.open(hero.wiki, "_blank");
-            alanBtn().playText(`opening hero number ${parsedNumber}`);
-          } else {
             alanBtn().playText(
               `I'm sorry, hero number ${parsedNumber} does not exist`
             );
+          } else if (hero) {
+            window.open(hero.wiki, "_blank");
+            alanBtn().playText(`opening hero number ${parsedNumber}`);
           }
         } else if (command === "close") {
           const parsedNumber =
