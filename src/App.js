@@ -65,7 +65,7 @@ const App = () => {
               <Typography variant="h5" component="h2">
                 Try saying: <br />
                 <br />
-                Open hero number [5]
+                Jarvis, Open hero number [5]
               </Typography>
             </div>
             <div className={classes.card}>
