@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import alanBtn from "@alan-ai/alan-sdk-web";
 import firebase from "./firebase";
 import Herolayout from "./components/Herolayout/Herolayout";
-import useStyles from "./styles"
+import useStyles from "./styles";
 import { Typography } from "@material-ui/core";
 import wordsToNumbers from "words-to-numbers";
 
@@ -10,9 +10,8 @@ const alanKey = process.env.REACT_APP_ALAN_KEY;
 
 const App = () => {
   const [superheroes, setSuperheroes] = useState([]);
-  const [activeHero, setActiveHero] = useState(-1)
+  const [activeHero, setActiveHero] = useState(-1);
   const classes = useStyles();
-  
 
   useEffect(() => {
     alanBtn({
@@ -33,7 +32,9 @@ const App = () => {
             window.open(hero.wiki, "_blank");
             alanBtn().playText(`opening hero number ${parsedNumber}`);
           } else {
-            alanBtn().playText(`I'm sorry, hero number ${parsedNumber} does not exist`);
+            alanBtn().playText(
+              `I'm sorry, hero number ${parsedNumber} does not exist`
+            );
           }
         } else if (command === "close") {
           const parsedNumber =
@@ -42,16 +43,14 @@ const App = () => {
               : number;
           const hero = heroes[parsedNumber - 1];
           if (parsedNumber > heroes.length) {
-            alanBtn().playText("Please try that again...");
-          } else if (hero) {
-            window.open(hero.wiki, "_blank");
-            alanBtn().playText(`opening villain number ${parsedNumber}`);
-          } else {
             alanBtn().playText(
               `I'm sorry, villain number ${parsedNumber} does not exist`
             );
+          } else if (hero) {
+            window.open(hero.wiki, "_blank");
+            alanBtn().playText(`opening villain number ${parsedNumber}`);
           }
-        } 
+        }
       },
     });
   }, []);
