@@ -82,7 +82,7 @@ const Herolayout = ({ heroes }) => {
       <Grid
         className={classes.container}
         container
-        alignItems="stretch"
+        // alignItems="stretch"
         spacing={3}
       >
         {heroes.map((hero, i) => (
