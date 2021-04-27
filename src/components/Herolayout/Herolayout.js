@@ -4,7 +4,11 @@ import SingleHero from "../SingleHero/SingleHero";
 import useStyles from "./styles.js";
 
 const heroCards = [
-  { color: "#00838f", title: "Superheroes", text: " Jarvis, Give me all the heroes" },
+  {
+    color: "#00838f",
+    title: "Superheroes",
+    text: " Jarvis, Give me all the heroes",
+  },
   {
     color: "#1234c0",
     title: "Villains",
@@ -14,13 +18,14 @@ const heroCards = [
     color: "#2579c0",
     title: "Superhero By Term",
     info: "DC, Marvel",
-    text: "Give me all the heroes from DC "
+    text: "Jarvis, Give me all the heroes from DC ",
+
   },
   {
     color: "#9175c0",
     title: "Villain By Term",
     info: "DC, Marvel",
-    text: "Give me all the Villains from Marvel",
+    text: "Jarvis, Give me all the Villains from Marvel"
   },
 ];
 
